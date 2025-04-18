@@ -7,9 +7,8 @@ This guide outlines the steps to configure and deploy Terraform scripts for mana
 ## Prerequisites
 
 Ensure the following tools are installed on your system:
-- Python
-- pip (Python package manager)
 - Terraform
+- AWS CLI
 
 ## Steps
 
