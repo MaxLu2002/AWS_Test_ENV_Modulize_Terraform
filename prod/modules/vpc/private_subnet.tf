@@ -10,7 +10,7 @@ resource "aws_subnet" "private_subnet" {
     8,
     count.index % var.private_subnet_count + 10
   )
-  availability_zone = element(var.availability_zones, count.index)
+  availability_zone = "${var.region}${element(var.availability_zones, count.index % length(var.availability_zones))}"
 
   tags = merge(
     var.tags,

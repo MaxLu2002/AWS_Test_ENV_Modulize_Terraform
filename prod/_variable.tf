@@ -33,4 +33,17 @@ variable "availability_zones" {
   type = list(string)
 }
 
+# EC2
+variable "ec2_count" {
+  type = number
+}
+
+variable "instance_type" {
+  type = string
+}
+
+variable "os_type" {
+  type = string
+}
+
 
