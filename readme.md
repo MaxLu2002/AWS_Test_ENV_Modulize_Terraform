@@ -2,9 +2,11 @@
 
 This guide outlines the steps to configure and deploy Terraform scripts for creating your AWS environment.
 
+*Note: The commands provided are tailored for PowerShell.*
+*Configuration example below: 1 VPC, 1 public subnet, 1 private subnet, and 2 EC2 instances per region. You can adjust the number of resources as needed by modifying the variables in `terraform.tfvars`.*
+
 ![Architecture Diagram](./image/architecture.png)
 
-*Note: The commands provided are tailored for PowerShell.*
 
 ## Prerequisites
 
