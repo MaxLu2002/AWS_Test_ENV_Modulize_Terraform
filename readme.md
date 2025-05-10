@@ -1,6 +1,8 @@
 # Terraform Project Setup Guide
 
-This guide outlines the steps to configure and deploy Terraform scripts for managing your AWS environment.
+This guide outlines the steps to configure and deploy Terraform scripts for creating your AWS environment.
+
+![Architecture Diagram](./image/architecture.png)
 
 *Note: The commands provided are tailored for PowerShell.*
 
@@ -26,14 +28,21 @@ Ensure the following tools are installed on your system:
     - **`main.tf`**: Define the resources and modules to be deployed.
     - **`terraform.tfvars`**: Provide variable values required by your Terraform scripts. Example:
     ```hcl
-    region              = "ap-northeast-2"
-    tags                = { Name = "test" }
-    bucket_count        = 2
-    vpc_count           = 2
-    vpc_cidr            = ["10.0.0.0/16", "10.1.0.0/16"]
-    public_subnet_count = 2
-    private_subnet_count = 2
-    availability_zones  = ["ap-northeast-2a", "ap-northeast-2b"]
+        # BASIC
+        region = "ap-northeast-2"
+        tags   = { Name = "max-test" }
+        # S3
+        bucket_count = 2
+        #VPC
+        vpc_count            = 2
+        vpc_cidr             = ["10.0.0.0/16", "10.1.0.0/16"]
+        public_subnet_count  = 2
+        private_subnet_count = 2
+        availability_zones   = ["a", "b"]
+        # ec2
+        ec2_count     = 1
+        instance_type = "t3.micro"
+        os_type       = "linux" # linux, windows, mac
     ```
 
 4. **Initialize and Apply Terraform Configuration**
@@ -55,8 +64,4 @@ Ensure the following tools are installed on your system:
 
 By following these instructions, you can efficiently set up and manage your AWS infrastructure using Terraform.
 
-### Observations:
-- The original content had minor formatting issues, such as inconsistent emphasis and unclear descriptions for some steps. These have been clarified.
-- The example for `terraform.tfvars` was valid and has been retained with minor formatting adjustments for better readability.
-- The step about setting AWS configuration was rephrased for clarity.
 
